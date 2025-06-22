@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azul Quest 2035</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b0b0b;
+      font-family: 'Press Start 2P', monospace;
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+    header, section, footer {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header {
+      background-color: #111;
+      animation: blink-border 2s infinite;
+      border-bottom: 3px dotted #00ffcc;
+    }
+    @keyframes blink-border {
+      0% { border-color: #00ffcc; }
+      50% { border-color: #ff00cc; }
+      100% { border-color: #00ffcc; }
+    }
+    section {
+      margin: 20px auto;
+      max-width: 800px;
+      border: 3px solid #00ffcc;
+      border-radius: 10px;
+      background-color: #1a1a1a;
+      transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: scale(1.02);
+      background-color: #222;
+    }
+    h1, h2 {
+      text-shadow: 0 0 5px #00ffcc;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00ffcc;
+      border: none;
+      color: #000;
+      font-family: 'Press Start 2P', monospace;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff00cc;
+      color: #fff;
+    }
+    .response {
+      margin-top: 10px;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Azul Quest 2035</h1>
+    <p>La aventura de una ingeniera en sistemas</p>
+    <button onclick="startGame()">START GAME</button>
+    <div id="startResponse" class="response"></div>
+  </header>
+
+  <section id="nivel1">
+    <h2>📘 Nivel 1: Formación Académica y Complementaria</h2>
+    <ul>
+      <li>Ingeniería en Sistemas de Información – UTN Córdoba (2027–2032)</li>
+      <li>Especialización Full Stack (React, Node.js, MongoDB) – Platzi, Udemy, freeCodeCamp</li>
+      <li>Certificación en Inteligencia Artificial aplicada a negocios – IBM SkillsBuild</li>
+      <li>Curso de Machine Learning – Google Cloud Platform</li>
+      <li>Certificación internacional en Scrum – Scrum.org</li>
+      <li>Productividad digital y gestión de equipos remotos (Notion, Trello, Slack)</li>
+      <li>Intercambio en el Politécnico de Milán (2031)</li>
+    </ul>
+    <button onclick="showResponse('nivel1')">Desbloquear habilidades</button>
+    <div id="resp-nivel1" class="response"></div>
+  </section>
+
+  <section id="nivel2">
+    <h2>💼 Nivel 2: Experiencia Profesional</h2>
+    <ul>
+      <li><strong>Internship – Mercado Libre (2030)</strong><br>Desarrollo de herramientas internas y proyectos reales.</li>
+      <li><strong>Desarrolladora Front-End – Globant (2031)</strong><br>Proyectos internacionales y metodologías ágiles.</li>
+      <li><strong>Full Stack Developer – EPAM Systems (2032)</strong><br>Integración de IA con equipos distribuidos.</li>
+      <li><strong>Desarrolladora Freelance – Upwork/Toptal (2033+)</strong><br>Soluciones para startups en salud y educación global.</li>
+    </ul>
+    <button onclick="showResponse('nivel2')">Ver logros</button>
+    <div id="resp-nivel2" class="response"></div>
+  </section>
+
+  <section id="nivel3">
+    <h2>📁 Nivel 3: Publicaciones y Proyectos</h2>
+    <ul>
+      <li>App de hábitos para estudiantes, incubada por Startup Chile</li>
+      <li>2.º puesto en Hackathon Google BA 2032 (app de IA educativa)</li>
+    </ul>
+    <button onclick="showResponse('nivel3')">Activar poderes</button>
+    <div id="resp-nivel3" class="response"></div>
+  </section>
+
+  <section id="nivel4">
+    <h2>🌐 Nivel 4: Idiomas y Habilidades Informáticas</h2>
+    <ul>
+      <li><strong>Idiomas:</strong> Español (nativo), Inglés (C1), Italiano (B1), Alemán (en aprendizaje)</li>
+      <li><strong>Tecnologías:</strong> React, Node.js, MongoDB, JavaScript</li>
+      <li><strong>Herramientas:</strong> Git, GitHub, Figma, Trello, Notion, Slack</li>
+      <li><strong>Otros:</strong> IA, ML, Scrum</li>
+    </ul>
+    <button onclick="showResponse('nivel4')">Mostrar trofeos</button>
+    <div id="resp-nivel4" class="response"></div>
+  </section>
+
+  <section id="nivel5">
+    <h2>🌍 Nivel 5: Otros Datos de Interés</h2>
+    <ul>
+      <li>Experiencia en equipos multiculturales y distintos husos horarios</li>
+      <li>Intercambio en Milán: fortalecimiento del italiano y networking tech</li>
+      <li>Objetivo: consolidar carrera freelance internacional</li>
+      <li>Adaptabilidad, eficiencia, responsabilidad y orientación a resultados</li>
+      <li>Pasón por aprender nuevos idiomas y herramientas digitales</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Gracias por jugar mi historia ✨</p>
+  </footer>
+
+  <script>
+    function startGame() {
+      document.getElementById("startResponse").textContent = "Nivel 1 desbloqueado. Comienza la aventura de Azul.";
+    }
+
+    function showResponse(level) {
+      const responses = {
+        nivel1: "+10 Sabiduría, +15 Conocimiento",
+        nivel2: "+20 Experiencia internacional",
+        nivel3: "+15 Creatividad, +5 Impacto",
+        nivel4: "+25 Poder Técnico total"
+      };
+      document.getElementById(`resp-${level}`).textContent = responses[level];
+    }
+  </script>
+</body>
+</html>
